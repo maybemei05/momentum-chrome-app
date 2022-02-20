@@ -1,3 +1,116 @@
+@import "reset.css";
+
 .hidden {
   display: none;
+
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.842);
+  position: relative;
+}
+
+img {
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+  opacity: 80%;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.now {
+  display: flex;
+  margin-left: 110px;
+  margin-bottom: 50px;
+}
+
+#clock {
+  font-size: 15vh;
+  font-weight: 700;
+}
+
+#weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 10px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#login-form input,
+#todo-form input {
+  border: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.747);
+  background-color: rgba(255, 255, 255, 0);
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 0.747);
+  font-size: 20px;
+  width: 300px;
+}
+
+#todo-form input {
+  width: 362px;
+}
+
+#login-form input:focus,
+#todo-form input:focus {
+ outline: none;
+}
+
+input::placeholder{
+  color: rgba(255, 255, 255, 0.747);
+}
+
+#greeting {
+  font-size: 10vh;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100px;
+  width: 360px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.192);
+  border-radius: 30px;
+}
+
+#todo-list::-webkit-scrollbar {
+  display: none;
+}
+
+#todo-list li {
+  margin-bottom: 10px;
+}
+
+#todo-list li button{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+  margin-top: 30px;
+  position: absolute;
+  bottom: 20px;
+}
+
+#quote span:first-child{
+  margin-bottom: 10px;
 }

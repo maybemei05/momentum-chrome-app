@@ -31,11 +31,11 @@ function paintToDo(newTodo) {
   span.innerText = newTodo.text;
 
   const button1 = document.createElement("button");
-  button1.innerText = "완료";
+  button1.innerText = "✔️";
   button1.addEventListener("click", doneToDo);
 
   const button2 = document.createElement("button");
-  button2.innerText = "삭제";
+  button2.innerText = "❌";
   button2.addEventListener("click", deleteToDo);
 
   li.appendChild(span);
