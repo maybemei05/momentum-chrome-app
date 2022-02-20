@@ -85,6 +85,7 @@ input::placeholder{
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 30px;
+  margin-bottom: 50px;
 }
 
 #todo-list::-webkit-scrollbar {
@@ -118,8 +119,12 @@ button {
   font-style: italic;
   margin-top: 30px;
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
+}
+
+#quote span {
   background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
 }
 
 #quote span:first-child{
