@@ -83,7 +83,7 @@ input::placeholder{
   max-height: 100px;
   width: 360px;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.192);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 30px;
 }
 
@@ -119,6 +119,7 @@ button {
   margin-top: 30px;
   position: absolute;
   bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 #quote span:first-child{
