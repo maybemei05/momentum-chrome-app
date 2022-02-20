@@ -2,24 +2,33 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
-const toDos = [];
+const TODOS_KEY = "todos";
+
+let toDos = [];
+
+function saveToDos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
 
 
 function doneToDo(event) { //완료
-  const li = event.target.parentElement; 
+  const li = event.target.parentElement;
   li.style.textDecoration = "line-through";
   li.style.fontStyle = "italic";
 }
 
 function deleteToDo(event) { //삭제
-  const li = event.target.parentElement; 
+  const li = event.target.parentElement;
   li.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
 }
 
 function paintToDo(newTodo) {
   const li = document.createElement("li");
+  li.id = newTodo.id;
   const span = document.createElement("span");
-  span.innerText = newTodo;
+  span.innerText = newTodo.text;
 
   const button1 = document.createElement("button");
   button1.innerText = "완료";
@@ -39,8 +48,21 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value; //새로운 변수에 저장해주고
   toDoInput.value = ""; //새로 입력할 수 있도록 비워주기
-  toDos.push(newTodo); //toDos 배열에 새로 입력한 todo 항목을 push
-  paintToDo(newTodo);
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now()
+  }
+  toDos.push(newTodoObj); //toDos 배열에 새로 입력한 todo 항목을 push
+  paintToDo(newTodoObj);
+  saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos !== null) {
+  const parsedTodos = JSON.parse(savedToDos);
+  toDos = parsedTodos; //빈 toDos에 저장했던 것들을 불러옴(복원)
+  parsedTodos.forEach(paintToDo);
+}
