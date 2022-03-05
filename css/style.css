@@ -1,8 +1,8 @@
 @import "reset.css";
+@import "todo.css";
 
 .hidden {
   display: none;
-
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 
 img {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   z-index: -1;
   opacity: 80%;
@@ -28,12 +28,13 @@ img {
 
 .now {
   display: flex;
-  margin-left: 110px;
-  margin-bottom: 50px;
+  position: absolute;
+  left: 50px;
+  top: 20px;
 }
 
 #clock {
-  font-size: 15vh;
+  font-size: 50px;
   font-weight: 700;
 }
 
@@ -44,10 +45,10 @@ img {
   padding: 0 10px;
   font-style: italic;
   margin-bottom: 10px;
+  border: 4px solid black;
 }
 
-#login-form input,
-#todo-form input {
+#login-form input {
   border: none;
   border-bottom: 3px solid rgba(255, 255, 255, 0.747);
   background-color: rgba(255, 255, 255, 0);
@@ -57,43 +58,21 @@ img {
   width: 300px;
 }
 
-#todo-form input {
-  width: 362px;
+#login-form input:focus {
+  outline: none;
 }
 
-#login-form input:focus,
-#todo-form input:focus {
- outline: none;
-}
-
-input::placeholder{
+input::placeholder {
   color: rgba(255, 255, 255, 0.747);
 }
 
 #greeting {
-  font-size: 10vh;
+  font-size: 60px;
   font-weight: 700;
   margin-bottom: 50px;
-}
-
-#todo-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: 100px;
-  width: 360px;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  margin-bottom: 50px;
-}
-
-#todo-list::-webkit-scrollbar {
-  display: none;
-}
-
-#todo-list li {
-  margin-bottom: 10px;
+  position: absolute;
+  left: 50px;
+  top: 80px;
 }
 
 button {
@@ -104,12 +83,6 @@ button {
 
 #login-form button {
   font-size: 30px;
-}
-
-#todo-list li button{
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  cursor: pointer;
 }
 
 #quote {
@@ -127,6 +100,6 @@ button {
   padding: 5px 10px;
 }
 
-#quote span:first-child{
+#quote span:first-child {
   margin-bottom: 10px;
 }
