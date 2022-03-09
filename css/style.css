@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "todo.css";
+@import "quote.css";
 
 .hidden {
   display: none;
@@ -84,39 +85,13 @@ button {
   font-size: 30px;
 }
 
-#quote {
+.box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  min-height: 300px;
-  max-height: 60vh;
-  position: absolute;
-  left: 400px;
-  top: 180px;
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 20px;
-  font-style: italic;
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-#quote span {
-  line-height: 30px;
-}
-
-#quote span:nth-child(1),
-#quote span:nth-child(3) {
-  font-weight: 600;
-}
-
-#quote span:nth-child(2),
-#quote span:nth-child(4) {
-  font-size: 12px;
-}
-
-#quote span:nth-child(2) {
-  margin-bottom: 30px;
-  margin-top: 10px;
+  min-height: 300px;
+  width: 300px;
+  bottom: 20px;
 }
