@@ -1,15 +1,7 @@
-.todo {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.2);
+#todo {
   position: absolute;
   left: 50px;
   top: 180px;
-  padding: 20px;
-  border-radius: 20px;
-  min-height: 300px;
-  max-height: 60vh;
-  width: 300px;
 }
 
 #todo-form input {
@@ -35,7 +27,16 @@
 }
 
 #todo-list::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+
+#todo-list::-webkit-scrollbar-track {
+  border-radius: 100px;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
 }
 
 #todo-list li {
