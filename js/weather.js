@@ -17,8 +17,13 @@ function onGeoOK(position) {
       } else if (weatherNow === "Clear") {
         const weatherNowEmoji = "☀️";
         weather.innerText = `${weatherNowEmoji} ${data.main.temp}°C`;
+      } else if (weatherNow === "Mist") {
+        const weatherNowEmoji = "🌫️";
+        weather.innerText = `${weatherNowEmoji} ${data.main.temp}°C`;
       }
-      console.log(url);
+      console.log(weatherNow);
+      console.log(lat);
+      console.log(lon);
     });
 }
 
