@@ -95,3 +95,13 @@ button {
   width: 300px;
   bottom: 20px;
 }
+
+#player {
+  border-radius: 20px;
+  width: 300px;
+  min-height: 300px;
+  position: absolute;
+  left: 750px;
+  top: 180px;
+  bottom: 20px;
+}
