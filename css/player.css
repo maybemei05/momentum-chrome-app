@@ -1,0 +1,34 @@
+.hidden {
+  display: none !important;
+}
+
+#playlist-form {
+  position: absolute;
+  left: 750px;
+  top: 180px;
+  bottom: 20px;
+}
+
+#playlist-form input {
+  border: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.747);
+  background-color: rgba(255, 255, 255, 0);
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 0.747);
+  font-size: 20px;
+  width: 300px;
+}
+
+#playlist-form input:focus {
+  outline: none;
+}
+
+#player {
+  border-radius: 20px;
+  width: 300px;
+  min-height: 200px;
+  position: absolute;
+  left: 770px;
+  top: 240px;
+  bottom: 20px;
+}
