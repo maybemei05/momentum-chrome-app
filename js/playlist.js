@@ -15,9 +15,7 @@ function paintPlaylist() {
   youtubePlayer.classList.remove(HIDDEN_CLASSNAME); //youtubePlayer hidden을 삭제 하여 보여지게 함
 }
 
-const savedPlaylistCode = localStorage.getItem(PLAYLIST_KEY); //유저 정보 확인
-
-console.log(savedPlaylistCode);
+let savedPlaylistCode = localStorage.getItem(PLAYLIST_KEY); //유저 정보 확인
 
 if (savedPlaylistCode === null) {
   //유저 네임이 없을 때
@@ -27,8 +25,6 @@ if (savedPlaylistCode === null) {
   //유저 네임이 있을 때
   paintPlaylist(savedPlaylistCode);
 }
-
-console.log(savedPlaylistCode);
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement("script");
@@ -41,13 +37,13 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 var player;
 
-function onYouTubePlayerAPIReady(playlistCode) {
+function onYouTubePlayerAPIReady(savedPlaylistCode) {
   player = new YT.Player("player", {
     // height: "300",
     // width: "200",
     playerVars: {
       listType: "playlist",
-      list: playlistCode,
+      list: savedPlaylistCode,
     },
   });
 }
